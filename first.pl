@@ -54,3 +54,61 @@ $a = 10;
 print "$a\n";
 print "@b\n";
 print %c;
+
+
+=begin data types
+    Scalar - Simples variables. Use Dollar sign ($). Can be a number, string or reference.
+
+    Arrays - Ordered lists of scalar that start with 0. Use "At" sign (@)
+        To access a index, use dolar sign ($) preceded of array name and later the index of array, like:
+
+        @names = ("A", "B", "C", "D");
+        print $names[2];
+
+    Hashes - unorderes sets of key/value pair. Use percent sign (%). It's like dictionary in python
+        To access a key in hashes, you use dolar sign ($) preceded of hashes name and later bracktes with the key name. Like:
+
+        %persons = ("Gabriel", 10, "Francisco", 30, "Maria", 25, "Juliana", 40);
+        print "The gabriel has $persons{'Gabriel'} years old\n";
+
+    you can use the same name to differentes data types variables, so, this is valid:
+
+    $name = "HI";
+    @name = ("HI");
+=cut
+
+$pos = 2;
+@numbers = (10, 20, 30, 40, 50);
+print "\nThe value in index $pos is $numbers[$pos]\n";
+
+%persons = ("Gabriel", 10, "Francisco", 30, "Maria", 25, "Juliana", 40);
+print "The gabriel has $persons{'Gabriel'} years old\n";
+
+
+
+# You can concat string using dot(.); For example:
+$name = "John";
+$surname = "Call";
+$fullname = $name . " " . $surname;
+print "$fullname\n";
+
+
+# You can create a array with qw operator. Each space is a index in array
+@array = qw\this is a array\;
+$size = @array;  # return 4
+print "The size of array is $size\n";
+
+
+# Sequential Numbers array
+@numbers = (10..100);  # dot dot (..) is the range operator
+$count = @numbers;
+print "The size of array is $count\n";
+
+
+# Array size
+@numbers = (10..100);
+print "The size of array is " . scalar $count . "\n"; # Can use scalar context to get the size
+$size = @numbers;  # get the size of array
+$max_index = $#numbers;  # using the # operator get the max index of a array
+print "The size of array is $size\n";
+print "The max index is $max_index\n";
