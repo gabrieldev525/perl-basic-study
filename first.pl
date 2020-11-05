@@ -112,3 +112,42 @@ $size = @numbers;  # get the size of array
 $max_index = $#numbers;  # using the # operator get the max index of a array
 print "The size of array is $size\n";
 print "The max index is $max_index\n";
+
+
+# Hashes creation
+
+# first way
+$data{"year"} = 2000;
+$data{"name"} = "Test";
+print $data{"year"} . "\n";
+
+# second way
+%person = ("name" => "Gabriel", "age" => 18);
+print "$person{'name'}\n";
+
+# third way
+%person = (-name => "Gabriel", -age => 18);
+print "$person{-name}\n";
+
+#fourth way
+%person = ("name", "Gabriel", "age", 18);
+print "$person{'name'}\n";
+
+
+# Getting keys from hash
+@keys = keys %person;
+@values = values %person;
+
+
+# check if exists
+if(exists($person{"name"})) {
+    print("Exists\n");
+}
+
+# delete element from hash
+delete $person{"name"};
+if(exists($person{"name"})) {
+    print("Exists");
+} else {
+    print("doesn't exists");
+}
